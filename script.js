@@ -49,10 +49,14 @@ function computersPick(){
 
     //return the random answer
     return computerPick;
-    
+
 }//end computers
 
 //players picking
 function playersPick(){
 
+    //prompt the player to input an answer, their input is then stored in the var 'playersChoice'
+    let playersChoice = prompt("Rock, Paper, or Scissors?", "");
+    //console.log(playersChoice);
+    return playersChoice;
 }//end players
