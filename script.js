@@ -1,14 +1,12 @@
 //Rock Paper Scissors!
 
-//our variables
-let round = 0;
-let player = playersPick();
-let computer = computersPick();
-let playerScore = 0;
-let computerScore = 0;
+// //our variables
+// let round = 0;
+// let player = playersPick();
+// let computer = computersPick();
+// let playerScore = 0;
+// let computerScore = 0;
 // const moves = ["Rock", "Paper", "Scissors"];
-
-
 
 /************ FUNCTIONS ***************/
 
@@ -16,17 +14,27 @@ let computerScore = 0;
 function game(){
     //play the game until someone makes it to 5 points
     for(let i = 0; i < 5; i++){
+
+        //  let round = 0;
+        //  let player = playersPick();
+        //  let computer = computersPick();
+
         //game started, so increase the round number
-        round++;
+        //round++;
         //call the playround function
+        //playRound(player, computer);
         
     }//end game
     
     
 }//end game
 
-//play round
-function playRound(){
+//play round(pretty much compare the players and computers choices, see who won the round)
+function playRound(playerPick, computerPick){
+    
+    //compare the players and computers answers
+    
+
 
 }//end playRound
 
