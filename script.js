@@ -32,8 +32,50 @@ function game(){
 //play round(pretty much compare the players and computers choices, see who won the round)
 function playRound(playerPick, computerPick){
     
-    //compare the players and computers answers
-    
+    //scores
+    let playerScore = 0; let computerScore = 0;
+
+    /*********compare the players and computers answers*********/
+    //if user picked rock and computer picked paper :
+    if(playerPick == 'rock' && computerPick == 'paper'){//computer win
+        //output that paper beats rock
+        console.log("Paper beats rock!");
+        //give point to computer
+        computerScore += 1;
+    }
+    //if user picked rock and computer picked scissors : 
+    else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
+        //output that rock beats paper
+        console.log("Rock beats scissors!");
+        //give point to player
+        playerScore += 1;
+    }
+    //if user picked scissors and computer picked paper :
+    else if(playerPick == 'scissors' && computerPick == 'paper'){//player win
+        //output scissors beats paper
+        console.log("Scissors beat paper!");
+        //give point to player
+        playerScore += 1;
+    }
+    //if user picked paper and computer picked scissors :
+    else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
+        //output scissors beat paper
+        console.log("Scissors beat paper!");
+        //give computer a point
+        computerScore += 1;
+    }
+    //if user picked scissors and computer picked rock : 
+    else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
+        //output rock beats scissors
+        console.log("Rock beats scissors!");
+        //give point to computer
+        computerScore += 1;
+    }
+    //if user picked paper and computer picked rock
+    else if(playerPick == 'paper' && computerPick == 'rock'){//player win
+        //out put paper beats rock
+        console.log("Paper beats rock!");
+    }
 
 
 }//end playRound
