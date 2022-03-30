@@ -48,55 +48,55 @@ function playRound(playerPick, computerPick){
     if(playerPick == 'rock' && computerPick == 'paper'){//computer win
         //output that paper beats rock
         console.log("Paper beats rock!");
-        //give point to computer
-        computerScore += 1;
-        //print out the winners score
-        console.log(computerScore);
+        // //give point to computer
+        // computerScore += 1;
+        // //print out the winners score
+        // console.log(computerScore);
     }
     //if user picked rock and computer picked scissors : 
     else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
         //output that rock beats paper
         console.log("Rock beats scissors!");
-        //give point to player
-        playerScore += 1;
-        //print out the winners score
-        console.log(playerScore);
+        // //give point to player
+        // playerScore += 1;
+        // //print out the winners score
+        // console.log(playerScore);
     }
     //if user picked scissors and computer picked paper :
     else if(playerPick == 'scissors' && computerPick == 'paper'){//player win
         //output scissors beats paper
         console.log("Scissors beat paper!");
-        //give point to player
-        playerScore += 1;
-        //print out the winners score
-        console.log(playerScore);
+        // //give point to player
+        // playerScore += 1;
+        // //print out the winners score
+        // console.log(playerScore);
     }
     //if user picked paper and computer picked scissors :
     else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
         //output scissors beat paper
         console.log("Scissors beat paper!");
-        //give computer a point
-        computerScore += 1;
-        //print out the winners score
-        console.log(computerScore);
+        // //give computer a point
+        // computerScore += 1;
+        // //print out the winners score
+        // console.log(computerScore);
     }
     //if user picked scissors and computer picked rock : 
     else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
         //output rock beats scissors
         console.log("Rock beats scissors!");
-        //give point to computer
-        computerScore += 1;
-        //print out the winners score
-        console.log(computerScore);
+        // //give point to computer
+        // computerScore += 1;
+        // //print out the winners score
+        // console.log(computerScore);
     }
     //if user picked paper and computer picked rock
     else if(playerPick == 'paper' && computerPick == 'rock'){//player win
         //out put paper beats rock
         console.log("Paper beats rock!");
-        //give point to player
-        playerScore += 1;
-        //print out the winners score
-        console.log(playerScore);
+        // //give point to player
+        // playerScore += 1;
+        // //print out the winners score
+        // console.log(playerScore);
     }
 
 
