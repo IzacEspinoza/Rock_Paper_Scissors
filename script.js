@@ -35,6 +35,7 @@ function game(){
         //call the playround function, will call 5 times (hopefully)
         playRound(player, computer);
         
+        /****HERE, TRY PUTTIN THE SCORE UPDATING CODE FROM  PLAYROUND() IN THIS SECTION INSTEAD ******/
     }//end game
     
     
