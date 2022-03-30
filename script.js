@@ -14,7 +14,7 @@
 //the game itself(calls playRound in here, playRound calls the player and computer selects)
 function game(){
 
-    //number of round 
+    //current round
     let round = 0;
 
     //scores
@@ -28,15 +28,27 @@ function game(){
         round++;
         console.log("Round " + round);
 
-        //player and computers pick functions
+        //player and computers picks
         let player = playersPick();
         let computer = computersPick();
 
         //call the playround function, will call 5 times (hopefully)
         playRound(player, computer);
+
+        /** pretty much works, just need a better console log to show who actually won round,
+         * 
+         * and need to give points to who won a round
+         * 
+         * and also need a conditional for if the round is a tie
+         * 
+         * also need to dispaly who picked what in the after round console log(e.g players rock beats computers scissors)
+         */
         
         /****HERE, TRY PUTTIN THE SCORE UPDATING CODE FROM  PLAYROUND() IN THIS SECTION INSTEAD ******/
-    }//end game
+    }//end gameplay loop
+
+    //winner message
+    console.log("The winner is.....");
     
     
 }//end game
@@ -48,7 +60,7 @@ function playRound(playerPick, computerPick){
     //if user picked rock and computer picked paper :
     if(playerPick == 'rock' && computerPick == 'paper'){//computer win
         //output that paper beats rock
-        console.log("Paper beats rock!");
+        console.log("Computers Paper beats Players Rock!");
         // //give point to computer
         // computerScore += 1;
         // //print out the winners score
@@ -57,7 +69,7 @@ function playRound(playerPick, computerPick){
     //if user picked rock and computer picked scissors : 
     else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
         //output that rock beats paper
-        console.log("Rock beats scissors!");
+        console.log("Players Rock beats Computers Scissors!");
         // //give point to player
         // playerScore += 1;
         // //print out the winners score
@@ -66,7 +78,7 @@ function playRound(playerPick, computerPick){
     //if user picked scissors and computer picked paper :
     else if(playerPick == 'scissors' && computerPick == 'paper'){//player win
         //output scissors beats paper
-        console.log("Scissors beat paper!");
+        console.log("Players Scissors beat Computers Paper!");
         // //give point to player
         // playerScore += 1;
         // //print out the winners score
@@ -75,7 +87,7 @@ function playRound(playerPick, computerPick){
     //if user picked paper and computer picked scissors :
     else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
         //output scissors beat paper
-        console.log("Scissors beat paper!");
+        console.log("Computers Scissors beat Players Paper!");
         // //give computer a point
         // computerScore += 1;
         // //print out the winners score
@@ -84,7 +96,7 @@ function playRound(playerPick, computerPick){
     //if user picked scissors and computer picked rock : 
     else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
         //output rock beats scissors
-        console.log("Rock beats scissors!");
+        console.log("Computers Rock beats Players Scissors!");
         // //give point to computer
         // computerScore += 1;
         // //print out the winners score
@@ -93,11 +105,14 @@ function playRound(playerPick, computerPick){
     //if user picked paper and computer picked rock
     else if(playerPick == 'paper' && computerPick == 'rock'){//player win
         //out put paper beats rock
-        console.log("Paper beats rock!");
+        console.log("Players Paper beats Computers Rock!");
         // //give point to player
         // playerScore += 1;
         // //print out the winners score
         // console.log(playerScore);
+    }else if(playerPick == computerPick && computerPick == playerPick){
+        //both picked the same thing
+        console.log("You both picked " + playerPick);
     }
 
 
