@@ -2,27 +2,38 @@
 
 // //our variables
 // let round = 0;
-// let player = playersPick();
+//let player = playersPick();
 // let computer = computersPick();
 // let playerScore = 0;
 // let computerScore = 0;
 // const moves = ["Rock", "Paper", "Scissors"];
 
+
 /************ FUNCTIONS ***************/
 
 //the game itself(calls playRound in here, playRound calls the player and computer selects)
 function game(){
-    //play the game until someone makes it to 5 points
-    for(let i = 0; i < 5; i++){
 
-        //  let round = 0;
-        //  let player = playersPick();
-        //  let computer = computersPick();
+    //number of round 
+    let round = 0;
 
-        //game started, so increase the round number
-        //round++;
-        //call the playround function
-        //playRound(player, computer);
+    //scores
+    let playerScore = 0;
+    let computerScore = 0;
+
+    //play 5 games, at the end see who has most points
+    while(round < 5){
+
+        //round started, so add 1 to counter
+        round++;
+        console.log("Round " + round);
+
+        //player and computers pick functions
+        let player = playersPick();
+        let computer = computersPick();
+
+        //call the playround function, will call 5 times (hopefully)
+        playRound(player, computer);
         
     }//end game
     
@@ -32,9 +43,6 @@ function game(){
 //play round(pretty much compare the players and computers choices, see who won the round)
 function playRound(playerPick, computerPick){
     
-    //scores
-    let playerScore = 0; let computerScore = 0;
-
     /*********compare the players and computers answers*********/
     //if user picked rock and computer picked paper :
     if(playerPick == 'rock' && computerPick == 'paper'){//computer win
@@ -42,6 +50,8 @@ function playRound(playerPick, computerPick){
         console.log("Paper beats rock!");
         //give point to computer
         computerScore += 1;
+        //print out the winners score
+        console.log(computerScore);
     }
     //if user picked rock and computer picked scissors : 
     else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
@@ -49,6 +59,8 @@ function playRound(playerPick, computerPick){
         console.log("Rock beats scissors!");
         //give point to player
         playerScore += 1;
+        //print out the winners score
+        console.log(playerScore);
     }
     //if user picked scissors and computer picked paper :
     else if(playerPick == 'scissors' && computerPick == 'paper'){//player win
@@ -56,6 +68,8 @@ function playRound(playerPick, computerPick){
         console.log("Scissors beat paper!");
         //give point to player
         playerScore += 1;
+        //print out the winners score
+        console.log(playerScore);
     }
     //if user picked paper and computer picked scissors :
     else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
@@ -63,6 +77,8 @@ function playRound(playerPick, computerPick){
         console.log("Scissors beat paper!");
         //give computer a point
         computerScore += 1;
+        //print out the winners score
+        console.log(computerScore);
     }
     //if user picked scissors and computer picked rock : 
     else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
@@ -70,11 +86,17 @@ function playRound(playerPick, computerPick){
         console.log("Rock beats scissors!");
         //give point to computer
         computerScore += 1;
+        //print out the winners score
+        console.log(computerScore);
     }
     //if user picked paper and computer picked rock
     else if(playerPick == 'paper' && computerPick == 'rock'){//player win
         //out put paper beats rock
         console.log("Paper beats rock!");
+        //give point to player
+        playerScore += 1;
+        //print out the winners score
+        console.log(playerScore);
     }
 
 
@@ -84,7 +106,7 @@ function playRound(playerPick, computerPick){
 function computersPick(){
 
     //array of choices for comp to choose
-    const moves = ["Rock", "Paper", "Scissors"];
+    const moves = ["rock", "paper", "scissors"];
 
     //computers random choice
     let computerPick = "Random";
