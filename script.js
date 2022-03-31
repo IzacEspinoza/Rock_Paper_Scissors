@@ -1,15 +1,8 @@
 //Rock Paper Scissors!
 
-// //our variables
-// let round = 0;
-//let player = playersPick();
-// let computer = computersPick();
-// let playerScore = 0;
-// let computerScore = 0;
-// const moves = ["Rock", "Paper", "Scissors"];
-
-
-/************ FUNCTIONS ***************/
+//global booleans, to see who won a round, and so the fucntions may access it and change it
+let playerWon;
+let computerWon;
 
 //the game itself(calls playRound in here, playRound calls the player and computer selects)
 function game(){
@@ -32,14 +25,14 @@ function game(){
         let player = playersPick();
         let computer = computersPick();
 
-        //call the playround function, 5 times
+        //call the playround function, output the winner of round
         playRound(player, computer);
-
         /** 
-         * and need to give points to who won a round
+         give points to who won a round
          */
+
         
-        /****HERE, TRY PUTTIN THE SCORE UPDATING CODE FROM  PLAYROUND() IN THIS SECTION INSTEAD ******/
+        
     }//end gameplay loop
 
     //winner message
@@ -56,6 +49,9 @@ function playRound(playerPick, computerPick){
     if(playerPick == 'rock' && computerPick == 'paper'){//computer win
         //output that paper beats rock
         console.log("Computers Paper beats Players Rock!");
+        
+        //computer won, so computerWon is TRUE
+        computerWon = true;
     }
     //if user picked rock and computer picked scissors : 
     else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
@@ -71,11 +67,17 @@ function playRound(playerPick, computerPick){
     else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
         //output scissors beat paper
         console.log("Computers Scissors beat Players Paper!");
+
+        //computer won, so computerWon is TRUE
+        computerWon = true;
     }
     //if user picked scissors and computer picked rock : 
     else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
         //output rock beats scissors
         console.log("Computers Rock beats Players Scissors!");
+
+        //computer won, so computerWon is TRUE
+        computerWon = true;
     }
     //if user picked paper and computer picked rock
     else if(playerPick == 'paper' && computerPick == 'rock'){//player win
@@ -83,7 +85,7 @@ function playRound(playerPick, computerPick){
         console.log("Players Paper beats Computers Rock!");
     }
     //if user and computer both picked the same thing
-    else if(playerPick == computerPick && computerPick == playerPick){
+    else if(playerPick == computerPick && computerPick == playerPick){//draw
         //both picked the same thing
         console.log("You both picked " + playerPick);
     }
