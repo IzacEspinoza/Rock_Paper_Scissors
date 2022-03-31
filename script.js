@@ -52,14 +52,23 @@ function game(){
              console.log("No points awarded");
          }
 
-         //print final  score
+         //print current  scoreline
          console.log("Computer: " + computerScore + ", Player: " + playerScore);
         
         
     }//end gameplay loop
 
+    //print finals scores
+    console.log("FINAL: Computer: " + computerScore + ", Player: " + playerScore);
+
     //winner message
-    console.log("The winner is.....");
+    if(playerScore > computerScore){
+    console.log("Player wins the Game!");
+    }else if(computerScore > playerScore){
+        console.log("Computer wins the Game!");
+    }else if(playerScore == computerScore || computerScore == playerScore){
+        console.log("The game had ended in a DRAW!");
+    }
     
     
 }//end game
