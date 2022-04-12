@@ -78,61 +78,61 @@ function playRound(playerPick, computerPick){
     
     /*********compare the players and computers answers*********/
     //if user picked rock and computer picked paper :
-    if(playerPick == 'rock' && computerPick == 'paper'){//computer win
+    if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'PAPER'){//computer win
         //output that paper beats rock
-        console.log("Computers Paper beats Players Rock!");
+        console.log("Computers " +  computerPick + " beats Players " + playerPick);
         
         //computer won, so computerWon is TRUE, playerWon is false;
         computerWon = true;
         playerWon = false;
     }
     //if user picked rock and computer picked scissors : 
-    else if(playerPick == 'rock' && computerPick == 'scissors'){//player win
+    else if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'SCISSORS'){//player win
         //output that rock beats paper
-        console.log("Players Rock beats Computers Scissors!");
+        console.log("Players " + playerPick + " beats Computers " + computerPick);
 
         //player won, so playerWon is TRUE, computerWon is now false
         playerWon = true;
         computerWon = false;
     }
     //if user picked scissors and computer picked paper :
-    else if(playerPick == 'scissors' && computerPick == 'paper'){//player win
+    else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'PAPER'){//player win
         //output scissors beats paper
-        console.log("Players Scissors beat Computers Paper!");
+        console.log("Players " + playerPick + " beat Computers " + computerPick);
 
         //player won, so playerWon is TRUE, computerWon is now false
         playerWon = true;
         computerWon = false;
     }
     //if user picked paper and computer picked scissors :
-    else if(playerPick == 'paper' && computerPick == 'scissors'){//computer win
+    else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'SCISSORS'){//computer win
         //output scissors beat paper
-        console.log("Computers Scissors beat Players Paper!");
+        console.log("Computers " + computerPick + " beat Players " + playerPick);
 
         //computer won, so computerWon is TRUE, playerWon is now false
         computerWon = true;
         playerWon = false;
     }
     //if user picked scissors and computer picked rock : 
-    else if(playerPick == 'scissors' && computerPick == 'rock'){//computer win
+    else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'ROCK'){//computer win
         //output rock beats scissors
-        console.log("Computers Rock beats Players Scissors!");
+        console.log("Computers " + computerPick + " beats Players " + playerPick);
 
         //computer won, so computerWon is TRUE, playerWon is now false
         computerWon = true;
         playerWon  = false;
     }
     //if user picked paper and computer picked rock
-    else if(playerPick == 'paper' && computerPick == 'rock'){//player win
+    else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'ROCK'){//player win
         //out put paper beats rock
-        console.log("Players Paper beats Computers Rock!");
+        console.log("Players " + playerPick + " beats Computers " + computerPick);
 
         //player won, so playerWon is TRUE, computerWon is now false;
         playerWon = true;
         computerWon = false;
     }
     //if user and computer both picked the same thing
-    else if(playerPick == computerPick && computerPick == playerPick){//draw
+    else if(playerPick.toUpperCase() == computerPick.toUpperCase() && computerPick.toUpperCase() == playerPick.toUpperCase()){//draw
         //both picked the same thing
         console.log("You both picked " + playerPick);
 
