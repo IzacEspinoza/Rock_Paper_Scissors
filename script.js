@@ -5,49 +5,43 @@ let playerWon = false;
 let computerWon = false;
 
 //List of buttons to get the users input/answer
-    // buttons is a node list. It looks and acts much like an array.
-    const buttons = document.querySelectorAll('button');
-    console.log(buttons);
+const buttons = document.querySelectorAll('button');
+//console.log(buttons);
 
-    // we use the .forEach method to iterate through each button
-    buttons.forEach((button) => {
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
 
-        // and for each one we add a 'click' listener
-        button.addEventListener('click', () => {
-            //alert(button.id);//alerts the buttons id on a click
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+        //alert(button.id);//alerts the buttons id on a click
             
-            //NEED to be : 
-            //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
-            //click button --> get playRound(*players selection* , and --> 
+        //NEED to be : 
+        //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
+        //click button --> get playRound(*players selection* , and --> 
 
-            //computers rando pick, for every button click
-            let comps = computersPick();
-            //if the button we click has THIS id
-            if(button.id == 'rock'){
-                //call playRound with choice
-                console.log("You picked Rock, Computer picked " + comps);
-                playRound('rock', comps);//call computerPick()
+        //computers rando pick, for every button click
+        let comps = computersPick();
+
+        //if the buttons we click has THIS id
+        if(button.id == 'rock'){
+            //call playRound with choice
+            console.log("You picked Rock, Computer picked " + comps);
+            playRound('rock', comps);  
+        }
+        else if(button.id == 'paper'){
+            //call playRound with choice
+            console.log("You picked Paper, Computer picked " + comps);
+            playRound('paper', comps); 
+        }
+        else if(button.id == 'scissors'){
+            //call playRound with choice
+            console.log("You picked scissors, Computer picked " + comps);
+            playRound('scissors', comps);
                 
-                
-            }
-            else if(button.id == 'paper'){
-                //call playRound with choice
-                console.log("You picked Paper, Computer picked " + comps);
-                playRound('paper', comps);
-                
-                
-            }
-            else if(button.id == 'scissors'){
-                //call playRound with choice
-                console.log("You picked scissors, Computer picked " + comps);
-                playRound('scissors', comps);
-                
-            }
+        }
             
         });
-    });
-
-
+    });//end event listener
 
 //play round(pretty much compare the players and computers choices, see who won the round)
 function playRound(playerPick, computerPick){
