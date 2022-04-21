@@ -4,20 +4,18 @@
 let playerWon = false;
 let computerWon = false;
 
+//grab our div 'results' 
+const resultsContainer = document.querySelector('.results');
+const choices = document.createElement('p');
+resultsContainer.appendChild(choices);
+
 //List of buttons to get the users input/answer
 const buttons = document.querySelectorAll('button');
-//console.log(buttons);
-
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('click', () => {
-        //alert(button.id);//alerts the buttons id on a click
-            
-        //NEED to be : 
-        //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
-        //click button --> get playRound(*players selection* , and --> 
 
         //computers rando pick, for every button click
         let comps = computersPick();
@@ -26,16 +24,23 @@ buttons.forEach((button) => {
         if(button.id == 'rock'){
             //call playRound with choice
             console.log("You picked Rock, Computer picked " + comps);
+            choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
+
+
             playRound('rock', comps);  
         }
         else if(button.id == 'paper'){
             //call playRound with choice
             console.log("You picked Paper, Computer picked " + comps);
+            choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
+
             playRound('paper', comps); 
         }
         else if(button.id == 'scissors'){
             //call playRound with choice
             console.log("You picked scissors, Computer picked " + comps);
+            choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
+
             playRound('scissors', comps);
                 
         }
