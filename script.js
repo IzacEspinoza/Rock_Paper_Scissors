@@ -1,12 +1,13 @@
 //Rock Paper Scissors!
 
-//global booleans, to see who won a round, and so the fucntions may access it and change it
+//global booleans, to see who won a round
 let playerWon = false;
 let computerWon = false;
 
-//event listeners for buttons
+//List of buttons to get the users input/answer
     // buttons is a node list. It looks and acts much like an array.
     const buttons = document.querySelectorAll('button');
+    console.log(buttons);
 
     // we use the .forEach method to iterate through each button
     buttons.forEach((button) => {
@@ -15,9 +16,25 @@ let computerWon = false;
         button.addEventListener('click', () => {
             alert(button.id);//alerts the buttons id on a click
             
+            //NEED to be : 
             //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
-            //pretty much 
-            //click button --> get playersChoice(what button they clicked)--> compare to computers answer
+            //click button --> get playRound(*players selection* , and --> 
+
+            //if the button we click has THIS id
+            if(button.id == 'rock'){
+                //call playRound with choice
+                console.log("YOu clicked the rock button");
+                
+            }
+            else if(button.id == 'paper'){
+                //call playRound with choice
+                console.log("You picked the Paper button");
+                
+            }
+            else if(button.id == 'scissors'){
+                //call playRound with choice
+                console.log("You picked the scissors button");
+            }
             
         });
     });
@@ -105,7 +122,7 @@ function playRound(playerPick, computerPick){
 
 }//end playRound
 
-//computers picking
+//computers picking, uses random number to spit out a random answer
 function computersPick(){
 
     //array of choices for comp to choose
@@ -127,6 +144,7 @@ function computersPick(){
 
 }//end computers
 
+/*
 //players picking
 function playersPick(){
 
@@ -135,3 +153,4 @@ function playersPick(){
     //console.log(playersChoice);
     return playersChoice;
 }//end players
+*/
