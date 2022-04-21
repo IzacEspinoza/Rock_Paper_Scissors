@@ -14,26 +14,34 @@ let computerWon = false;
 
         // and for each one we add a 'click' listener
         button.addEventListener('click', () => {
-            alert(button.id);//alerts the buttons id on a click
+            //alert(button.id);//alerts the buttons id on a click
             
             //NEED to be : 
             //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
             //click button --> get playRound(*players selection* , and --> 
 
+            //computers rando pick, for every button click
+            let comps = computersPick();
             //if the button we click has THIS id
             if(button.id == 'rock'){
                 //call playRound with choice
-                console.log("YOu clicked the rock button");
+                console.log("You picked Rock, Computer picked " + comps);
+                playRound('rock', comps);//call computerPick()
+                
                 
             }
             else if(button.id == 'paper'){
                 //call playRound with choice
-                console.log("You picked the Paper button");
+                console.log("You picked Paper, Computer picked " + comps);
+                playRound('paper', comps);
+                
                 
             }
             else if(button.id == 'scissors'){
                 //call playRound with choice
-                console.log("You picked the scissors button");
+                console.log("You picked scissors, Computer picked " + comps);
+                playRound('scissors', comps);
+                
             }
             
         });
@@ -49,7 +57,7 @@ function playRound(playerPick, computerPick){
     //if user picked rock and computer picked paper :
     if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'PAPER'){//computer win
         //output that paper beats rock
-        console.log("Computers " +  computerPick + " beats Players " + playerPick);
+        console.log("Computer +1pt");
         
         //computer won, so computerWon is TRUE, playerWon is false;
         computerWon = true;
@@ -58,7 +66,7 @@ function playRound(playerPick, computerPick){
     //if user picked rock and computer picked scissors : 
     else if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'SCISSORS'){//player win
         //output that rock beats paper
-        console.log("Players " + playerPick + " beats Computers " + computerPick);
+        console.log("Player +1pt");
 
         //player won, so playerWon is TRUE, computerWon is now false
         playerWon = true;
@@ -67,7 +75,7 @@ function playRound(playerPick, computerPick){
     //if user picked scissors and computer picked paper :
     else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'PAPER'){//player win
         //output scissors beats paper
-        console.log("Players " + playerPick + " beat Computers " + computerPick);
+        console.log("Players +1pt");
 
         //player won, so playerWon is TRUE, computerWon is now false
         playerWon = true;
@@ -76,7 +84,7 @@ function playRound(playerPick, computerPick){
     //if user picked paper and computer picked scissors :
     else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'SCISSORS'){//computer win
         //output scissors beat paper
-        console.log("Computers " + computerPick + " beat Players " + playerPick);
+        console.log("Computer +1pt");
 
         //computer won, so computerWon is TRUE, playerWon is now false
         computerWon = true;
@@ -85,7 +93,7 @@ function playRound(playerPick, computerPick){
     //if user picked scissors and computer picked rock : 
     else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'ROCK'){//computer win
         //output rock beats scissors
-        console.log("Computers " + computerPick + " beats Players " + playerPick);
+        console.log("Computer +1pt");
 
         //computer won, so computerWon is TRUE, playerWon is now false
         computerWon = true;
@@ -94,7 +102,7 @@ function playRound(playerPick, computerPick){
     //if user picked paper and computer picked rock
     else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'ROCK'){//player win
         //out put paper beats rock
-        console.log("Players " + playerPick + " beats Computers " + computerPick);
+        console.log("Players +1pt");
 
         //player won, so playerWon is TRUE, computerWon is now false;
         playerWon = true;
@@ -103,7 +111,7 @@ function playRound(playerPick, computerPick){
     //if user and computer both picked the same thing
     else if(playerPick.toUpperCase() == computerPick.toUpperCase() && computerPick.toUpperCase() == playerPick.toUpperCase()){//draw
         //both picked the same thing
-        console.log("You both picked " + playerPick);
+        console.log("Tie");
 
         //nobody won, so neither is true
         computerWon = false;
@@ -112,7 +120,7 @@ function playRound(playerPick, computerPick){
     //if whatever they put was not an option, or something else happen
     else{
         //tell they fucked up
-        console.log("You fucked up.  Choose between rock, paper, or scissors fool!");
+        alert("I dont know how but you fucked up.....");
 
         //playerWon and computerWon are false, because we couldnt even get that far!
         playerWon = false;
@@ -144,13 +152,4 @@ function computersPick(){
 
 }//end computers
 
-/*
-//players picking
-function playersPick(){
 
-    //prompt the player to input an answer, their input is then stored in the var 'playersChoice'
-    let playersChoice = prompt("Rock, Paper, or Scissors?", "");
-    //console.log(playersChoice);
-    return playersChoice;
-}//end players
-*/
