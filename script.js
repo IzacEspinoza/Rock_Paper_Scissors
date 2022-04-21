@@ -4,79 +4,31 @@
 let playerWon = false;
 let computerWon = false;
 
-//the game itself(calls playRound in here, playRound calls the player and computer selects)
-function game(){
+//event listeners for buttons
+    // buttons is a node list. It looks and acts much like an array.
+    const buttons = document.querySelectorAll('button');
 
-    //current round
-    let round = 0;
+    // we use the .forEach method to iterate through each button
+    buttons.forEach((button) => {
 
-    //scores
-    let playerScore = 0;
-    let computerScore = 0;
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', () => {
+            alert(button.id);//alerts the buttons id on a click
+            
+            //on button click, call the playRound(*with right playerSelection based on what button we pressed*)
+            //pretty much 
+            //click button --> get playersChoice(what button they clicked)--> compare to computers answer
+            
+        });
+    });
 
-    
 
-    //play 5 games, at the end see who has most points
-    while(round < 5){
-
-        //round started, so add 1 to counter
-        round++;
-        console.log("Round " + round);
-
-        //player and computers picks
-        let player = playersPick();
-        let computer = computersPick();
-
-        //call the playround function, output the winner of round
-        playRound(player, computer);
-        /** 
-         give points to who won a round
-         */
-
-         //if computer won round, give them a point and display their score
-         if(computerWon){
-             //give them a point
-             computerScore++;
-             //print their current score
-             console.log("Computer +" + computerScore);
-         }
-         //if player won the round, give them a point and display their score
-         else if(playerWon){
-             //give player a point
-             playerScore++;
-             //print players current score
-             console.log("Player +" + playerScore);
-         }
-         //if whatever else happens, print this
-         else{
-             console.log("No points awarded");
-         }
-
-         //print current  scoreline
-         console.log("Computer: " + computerScore + ", Player: " + playerScore);
-        
-        
-    }//end gameplay loop
-
-    //print finals scores
-    console.log("FINAL: Computer: " + computerScore + ", Player: " + playerScore);
-
-    //winner message
-    if(playerScore > computerScore){
-    console.log("Player wins the Game!");
-    }else if(computerScore > playerScore){
-        console.log("Computer wins the Game!");
-    }else if(playerScore == computerScore || computerScore == playerScore){
-        console.log("The game had ended in a DRAW!");
-    }
-    
-    
-}//end game
 
 //play round(pretty much compare the players and computers choices, see who won the round)
 function playRound(playerPick, computerPick){
     
     /*********compare the players and computers answers*********/
+
     //if user picked rock and computer picked paper :
     if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'PAPER'){//computer win
         //output that paper beats rock
