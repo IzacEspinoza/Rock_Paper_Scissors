@@ -6,8 +6,14 @@ let computerWon = false;
 
 //grab our div 'results' 
 const resultsContainer = document.querySelector('.results');
-const choices = document.createElement('p');
-resultsContainer.appendChild(choices);
+    //empty text tag that will display results after round
+    const choices = document.createElement('p');
+    resultsContainer.appendChild(choices);
+
+//create another div for the current scorline
+const scorline = document.createElement('div');
+    //empty text to show the current score
+    const score = document.createElement('p');
 
 //List of buttons to get the users input/answer
 const buttons = document.querySelectorAll('button');
@@ -25,109 +31,64 @@ buttons.forEach((button) => {
             //call playRound with choice
             console.log("You picked Rock, Computer picked " + comps);
             choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
-
-
-            playRound('rock', comps);  
+            
+            playerWon == true;
         }
         else if(button.id == 'paper'){
             //call playRound with choice
             console.log("You picked Paper, Computer picked " + comps);
             choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
 
-            playRound('paper', comps); 
+             
         }
         else if(button.id == 'scissors'){
             //call playRound with choice
             console.log("You picked scissors, Computer picked " + comps);
             choices.textContent = "You picked " + button.id + ", Computer picked " + comps;
 
-            playRound('scissors', comps);
+            
                 
         }
             
         });
     });//end event listener
 
-//play round(pretty much compare the players and computers choices, see who won the round)
-function playRound(playerPick, computerPick){
     
-    /*********compare the players and computers answers*********/
 
-    //if user picked rock and computer picked paper :
-    if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'PAPER'){//computer win
-        //output that paper beats rock
-        console.log("Computer +1pt");
-        
-        //computer won, so computerWon is TRUE, playerWon is false;
-        computerWon = true;
-        playerWon = false;
+
+//game function
+
+function game(){
+
+    //scores
+    let playerScore = 0; let compScore = 0;
+    //game repeat
+    let playAgain = false;
+
+    while(playerScore <= 5 || compScore <= 5){
+        playRound();
+        playerScore += 1;
     }
-    //if user picked rock and computer picked scissors : 
-    else if(playerPick.toUpperCase() == 'ROCK' && computerPick.toUpperCase() == 'SCISSORS'){//player win
-        //output that rock beats paper
-        console.log("Player +1pt");
-
-        //player won, so playerWon is TRUE, computerWon is now false
-        playerWon = true;
-        computerWon = false;
-    }
-    //if user picked scissors and computer picked paper :
-    else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'PAPER'){//player win
-        //output scissors beats paper
-        console.log("Players +1pt");
-
-        //player won, so playerWon is TRUE, computerWon is now false
-        playerWon = true;
-        computerWon = false;
-    }
-    //if user picked paper and computer picked scissors :
-    else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'SCISSORS'){//computer win
-        //output scissors beat paper
-        console.log("Computer +1pt");
-
-        //computer won, so computerWon is TRUE, playerWon is now false
-        computerWon = true;
-        playerWon = false;
-    }
-    //if user picked scissors and computer picked rock : 
-    else if(playerPick.toUpperCase() == 'SCISSORS' && computerPick.toUpperCase() == 'ROCK'){//computer win
-        //output rock beats scissors
-        console.log("Computer +1pt");
-
-        //computer won, so computerWon is TRUE, playerWon is now false
-        computerWon = true;
-        playerWon  = false;
-    }
-    //if user picked paper and computer picked rock
-    else if(playerPick.toUpperCase() == 'PAPER' && computerPick.toUpperCase() == 'ROCK'){//player win
-        //out put paper beats rock
-        console.log("Players +1pt");
-
-        //player won, so playerWon is TRUE, computerWon is now false;
-        playerWon = true;
-        computerWon = false;
-    }
-    //if user and computer both picked the same thing
-    else if(playerPick.toUpperCase() == computerPick.toUpperCase() && computerPick.toUpperCase() == playerPick.toUpperCase()){//draw
-        //both picked the same thing
-        console.log("Tie");
-
-        //nobody won, so neither is true
-        computerWon = false;
-        playerWon = false;
-    }
-    //if whatever they put was not an option, or something else happen
-    else{
-        //tell they fucked up
-        alert("I dont know how but you fucked up.....");
-
-        //playerWon and computerWon are false, because we couldnt even get that far!
-        playerWon = false;
-        computerWon = false;
-    }
+   
 
 
-}//end playRound
+    
+
+}//end game
+
+
+
+
+
+
+
+
+
+
+//players pick function
+function playRound(){
+
+}//end players
 
 //computers picking, uses random number to spit out a random answer
 function computersPick(){
